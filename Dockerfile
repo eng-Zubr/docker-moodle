@@ -34,6 +34,8 @@ RUN chown -R www-data:www-data /var/www/html/
 # PHPUnit configuration & initialization.
 RUN mkdir /var/phpu_moodle/
 RUN chmod 777 /var/phpu_moodle/
+RUN locale-gen en_AU.UTF-8 # Necessary for PHPUnit.
+RUN update-locale
 
 # Startup script.
 COPY scripts/docker-entrypoint.sh /docker-entrypoint.sh

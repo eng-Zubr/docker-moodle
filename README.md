@@ -1,7 +1,7 @@
 Moodle & Docker
 ===============
 
-Dockerized Moodle!
+Dockerized Moodle for **development environment**!
 
 This Dockerfile installs:
 
@@ -35,3 +35,7 @@ Choose the port to map the container to. You have to specify it also as environm
 We would have to access the site:
 
 `localhost:3456/moodle`.
+
+## TODO
+
+ - Behat testing environment.

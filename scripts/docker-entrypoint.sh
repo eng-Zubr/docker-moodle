@@ -31,6 +31,16 @@ sudo -u postgres /usr/bin/psql -c "CREATE DATABASE mdl_phpunit_db WITH OWNER moo
 chmod 755 -R /var/www/html/moodle/
 
 # Install PHPUnit for Moodle.
+echo "
+    \$CFG->phpunit_prefix    = 'phpu_';
+    \$CFG->phpunit_dataroot  = '/var/phpu_moodle/';
+    \$CFG->phpunit_dbtype    = 'pgsql';
+    \$CFG->phpunit_dbhost    = 'localhost';
+    \$CFG->phpunit_dbname    = 'mdl_phpunit_db';
+    \$CFG->phpunit_dbuser    = 'moodleuser';
+    \$CFG->phpunit_dbpass    = 'm00dl3us3r!';
+" >> /var/www/html/moodle/config.php
+
 /usr/bin/php /var/www/html/moodle/admin/tool/phpunit/cli/init.php
 
 # Never ending command for maintaining container alive.

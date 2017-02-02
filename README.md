@@ -30,7 +30,7 @@ If you want to install a specific Moodle version, specify it with `--build-arg` 
 
 Choose the port to map the container to. You have to specify it also as environmental variable, since the `$CFG->wwwroot` has to know it to construct the URL. For example:
 
-`docker run -p 3456:80 -e MOODLE_PORT=3456 -d --name=moodle1 moodle`
+`docker run -p 3456:80 -e MOODLE_URL=http://localhost:3456/ -d --name=moodle1 moodle`
 
 We would have to access the site:
 
